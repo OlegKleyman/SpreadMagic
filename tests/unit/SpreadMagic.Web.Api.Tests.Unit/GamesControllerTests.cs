@@ -18,8 +18,8 @@ namespace SpreadMagic.Web.Api.Tests.Unit
             var gamesService = Substitute.For<IGameService>();
             var games = new[]
             {
-                new Game(1, 10, 11, new DateTime(2020, 4, 11, 8, 0, 0)),
-                new Game(2, 12, 13, new DateTime(2020, 4, 11, 9, 0, 0))
+                new Game(1, 10, 11, new DateTime(2020, 4, 11, 8, 0, 0),-1.1m),
+                new Game(2, 12, 13, new DateTime(2020, 4, 11, 9, 0, 0), 3.2m)
             };
 
             gamesService.GetFutureGames().Returns(games);

@@ -11,5 +11,6 @@ namespace SpreadMagic.Web.Api.Models
         public int AwayTeamId { get; set; }
 
         public DateTime DateAndTime { get; set; }
+        public decimal Spread { get; internal set; }
     }
 }

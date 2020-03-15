@@ -19,7 +19,7 @@ namespace SpreadMagic.Core
         {
             var games = _gamesContext.Games.Where(game => game.DateAndTime > _dateProvider.UtcNow)
                                      .Select(game =>
-                                         new Game(game.Id, game.HomeTeamId, game.AwayTeamId, game.DateAndTime))
+                                         new Game(game.Id, game.HomeTeamId, game.AwayTeamId, game.DateAndTime, game.Spread))
                                      .ToArray();
             return games;
         }

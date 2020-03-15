@@ -24,7 +24,8 @@ namespace SpreadMagic.Web.Api.Controllers
                 Id = game.Id,
                 AwayTeamId = game.AwayTeamId,
                 HomeTeamId = game.HomeTeamId,
-                DateAndTime = game.DateAndTime
+                DateAndTime = game.DateAndTime,
+                Spread = game.Spread
             });
 
             return Ok(gameModels.ToArray());

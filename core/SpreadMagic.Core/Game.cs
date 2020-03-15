@@ -11,13 +11,15 @@ namespace SpreadMagic.Core
         public int AwayTeamId { get; }
 
         public DateTime DateAndTime { get; }
+        public decimal Spread { get; }
 
-        public Game(int id, int homeTeamId, int awayTeamId, DateTime dateAndTime)
+        public Game(int id, int homeTeamId, int awayTeamId, DateTime dateAndTime, decimal spread)
         {
             Id = id;
             HomeTeamId = homeTeamId;
             AwayTeamId = awayTeamId;
             DateAndTime = dateAndTime;
+            Spread = spread;
         }
     }
 }

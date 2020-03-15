@@ -44,19 +44,22 @@ namespace SpreadMagic.Web.Api
                     {
                         HomeTeamId = 1,
                         AwayTeamId = 2,
-                        DateAndTime = DateTime.UtcNow.AddDays(4)
+                        DateAndTime = DateTime.UtcNow.AddDays(4),
+                        Spread = 3m
                     },
                     new GameEntity
                     {
                         HomeTeamId = 3,
                         AwayTeamId = 4,
-                        DateAndTime = DateTime.UtcNow.AddDays(7)
+                        DateAndTime = DateTime.UtcNow.AddDays(7),
+                        Spread = -1.1m
                     },
                     new GameEntity
                     {
                         HomeTeamId = 3,
                         AwayTeamId = 4,
-                        DateAndTime = DateTime.MinValue
+                        DateAndTime = DateTime.MinValue,
+                        Spread = 3.2m
                     });
 
                 context.SaveChanges();

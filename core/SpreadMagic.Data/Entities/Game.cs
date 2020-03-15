@@ -12,5 +12,6 @@ namespace SpreadMagic.Data.Entities
         public int HomeTeamId { get; set; }
 
         public int AwayTeamId { get; set; }
+        public decimal Spread { get; set; }
     }
 }
