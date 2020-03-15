@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpreadMagic.Core;
 using SpreadMagic.Web.Api.Models;
@@ -15,9 +17,9 @@ namespace SpreadMagic.Web.Api.Controllers
 
         [HttpGet]
         [Route("future")]
-        public IActionResult GetFutureGames()
+        public async Task<IActionResult> GetFutureGames()
         {
-            var games = _gameService.GetFutureGames();
+            var games = await _gameService.GetFutureGamesAsync();
 
             var gameModels = games.Select(game => new GameModel
             {
@@ -29,6 +31,23 @@ namespace SpreadMagic.Web.Api.Controllers
             });
 
             return Ok(gameModels.ToArray());
+        }
+        [HttpGet]
+        [Route("search")]
+        public async Task<IActionResult> GetAllGames([FromQuery]GameDetailFilterModel gameDetailFilterModel)
+        {
+            var details = await _gameService.GetAllGamesAsync(new DetailsFilter { StartDateAndTime = gameDetailFilterModel.StartDateAndTime });
+            var gameDetailModels =
+                details.Select(x => new GameDetailModel { Id = x.Id, 
+                    AwayTeamId = x.AwayTeamId, 
+                    HomeTeamId = x.HomeTeamId, 
+                    ModelPrediction = x.ModelPrediction, 
+                    Spread = x.Spread, 
+                    DateAndTime = x.
+                    DateAndTime, 
+                    HomeScore = x.HomeScore, 
+                    VisitorScore = x.VisitorScore });
+            return Ok(gameDetailModels.ToArray());
         }
     }
 }

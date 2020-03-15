@@ -19,7 +19,7 @@ namespace SpreadMagic.Core
             HomeTeamId = homeTeamId;
             AwayTeamId = awayTeamId;
             DateAndTime = dateAndTime;
-            Spread = spread;
+            Spread = spread;            
         }
     }
 }
