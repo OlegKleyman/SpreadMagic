@@ -8,6 +8,7 @@ using SpreadMagic.Core;
 using SpreadMagic.Data.Contexts;
 using SpreadMagic.Data.Entities;
 using GameEntity = SpreadMagic.Data.Entities.Game;
+using GameDetailsEntity = SpreadMagic.Data.Contexts.GameDetails;
 
 using SqlGameContext = SpreadMagic.Data.Sql.Contexts.GameContext;
 
@@ -61,7 +62,27 @@ namespace SpreadMagic.Web.Api
                         DateAndTime = DateTime.MinValue,
                         Spread = 3.2m
                     });
-
+                context.GameDetails.AddRange(new GameDetailsEntity
+                {
+                    HomeTeamId = 1,
+                    AwayTeamId = 2,
+                    DateAndTime = DateTime.UtcNow.AddDays(4),
+                    Spread = 3m
+                },
+                    new GameDetailsEntity
+                    {
+                        HomeTeamId = 3,
+                        AwayTeamId = 4,
+                        DateAndTime = DateTime.UtcNow.AddDays(7),
+                        Spread = -1.1m
+                    },
+                    new GameDetailsEntity
+                    {
+                        HomeTeamId = 3,
+                        AwayTeamId = 4,
+                        DateAndTime = DateTime.MinValue,
+                        Spread = 3.2m
+                    });
                 context.SaveChanges();
             }
 

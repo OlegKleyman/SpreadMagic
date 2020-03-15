@@ -23,5 +23,13 @@ namespace SpreadMagic.Data.Contexts
             get => _games ?? throw new InvalidOperationException($"{nameof(Games)} is null.");
             set => _games = value;
         }
+
+        private DbSet<GameDetails>? _gamesDetails;
+
+        public DbSet<GameDetails> GameDetails
+        {
+            get => _gamesDetails ?? throw new InvalidOperationException($"{nameof(GameDetails)} is null.");
+            set => _gamesDetails = value;
+        }
     }
 }
