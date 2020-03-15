@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{B4814A40-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{08CD5D6E-6E7B-4DC3-8210-30B586BC134E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadMagic.Web.Api.Tests.Integration", "tests\integration\SpreadMagic.Web.Api.Tests.Integration\SpreadMagic.Web.Api.Tests.Integration.csproj", "{89199E1A-CDB0-4623-8B7C-618F0DF3460B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadMagic.Web.Api.Tests.Integration", "tests\integration\SpreadMagic.Web.Api.Tests.Integration\SpreadMagic.Web.Api.Tests.Integration.csproj", "{89199E1A-CDB0-4623-8B7C-618F0DF3460B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadMagic.Web.Api.Tests.Unit", "tests\unit\SpreadMagic.Web.Api.Tests.Unit\SpreadMagic.Web.Api.Tests.Unit.csproj", "{6BD54CAE-41E9-4087-ABC6-1F8C9DFD1814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadMagic.Web.Api.Tests.Unit", "tests\unit\SpreadMagic.Web.Api.Tests.Unit\SpreadMagic.Web.Api.Tests.Unit.csproj", "{6BD54CAE-41E9-4087-ABC6-1F8C9DFD1814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadMagic.Web.Api", "core\SpreadMagic.Web.Api\SpreadMagic.Web.Api.csproj", "{AFF7B531-E553-45E6-AF92-33BC802A4FB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadMagic.Web.Api", "core\SpreadMagic.Web.Api\SpreadMagic.Web.Api.csproj", "{AFF7B531-E553-45E6-AF92-33BC802A4FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadMagic.Core", "core\SpreadMagic.Core\SpreadMagic.Core.csproj", "{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{AFF7B531-E553-45E6-AF92-33BC802A4FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFF7B531-E553-45E6-AF92-33BC802A4FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFF7B531-E553-45E6-AF92-33BC802A4FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{89199E1A-CDB0-4623-8B7C-618F0DF3460B} = {08CD5D6E-6E7B-4DC3-8210-30B586BC134E}
 		{6BD54CAE-41E9-4087-ABC6-1F8C9DFD1814} = {B4814A40-1E35-4005-8B3D-FC1E1D1F44AE}
 		{AFF7B531-E553-45E6-AF92-33BC802A4FB8} = {A4366428-1AF9-4F83-937B-5E68221A2715}
+		{3C0C9C89-37F0-493C-B599-3DA0B4FBDD5E} = {A4366428-1AF9-4F83-937B-5E68221A2715}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF966966-C31A-4A9B-A655-9AD9BA9CA689}
