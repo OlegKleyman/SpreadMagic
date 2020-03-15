@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpreadMagic.Core\SpreadMagic.Core.csproj" />
+    <ProjectReference Include="..\SpreadMagic.Data.Sql\SpreadMagic.Data.Sql.csproj" />
+  </ItemGroup>
+
+</Project>
