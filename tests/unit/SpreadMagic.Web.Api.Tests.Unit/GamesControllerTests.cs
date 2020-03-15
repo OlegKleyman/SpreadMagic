@@ -15,7 +15,7 @@ namespace SpreadMagic.Web.Api.Tests.Unit
         [Fact]
         public void GetFutureGamesReturnsAllFutureGamesFromService()
         {
-            var gamesService = Substitute.For<IGamesService>();
+            var gamesService = Substitute.For<IGameService>();
             var games = new[]
             {
                 new Game(1, 10, 11, new DateTime(2020, 4, 11, 8, 0, 0)),
@@ -48,6 +48,6 @@ namespace SpreadMagic.Web.Api.Tests.Unit
                       });
         }
 
-        private GamesController GetController(IGamesService gamesService) => new GamesController(gamesService);
+        private GamesController GetController(IGameService gameService) => new GamesController(gameService);
     }
 }

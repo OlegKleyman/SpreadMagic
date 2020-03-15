@@ -1,6 +1,6 @@
 ﻿namespace SpreadMagic.Core
 {
-    public interface IGamesService
+    public interface IGameService
     {
         Game[] GetFutureGames();
     }

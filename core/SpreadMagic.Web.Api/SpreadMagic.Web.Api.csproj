@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SpreadMagic.Core\SpreadMagic.Core.csproj" />
+    <ProjectReference Include="..\SpreadMagic.Data.Sql\SpreadMagic.Data.Sql.csproj" />
   </ItemGroup>
 
 </Project>

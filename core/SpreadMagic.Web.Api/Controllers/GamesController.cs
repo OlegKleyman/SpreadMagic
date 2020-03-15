@@ -9,15 +9,15 @@ namespace SpreadMagic.Web.Api.Controllers
     [Route("games")]
     public class GamesController : ControllerBase
     {
-        private readonly IGamesService _gamesService;
+        private readonly IGameService _gameService;
 
-        public GamesController(IGamesService gamesService) => _gamesService = gamesService;
+        public GamesController(IGameService gameService) => _gameService = gameService;
 
         [HttpGet]
         [Route("future")]
         public IActionResult GetFutureGames()
         {
-            var games = _gamesService.GetFutureGames();
+            var games = _gameService.GetFutureGames();
 
             var gameModels = games.Select(game => new GameModel
             {
