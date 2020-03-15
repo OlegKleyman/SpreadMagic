@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using FluentAssertions;
 using MockQueryable.NSubstitute;
 using NSubstitute;
@@ -13,7 +14,7 @@ namespace SpreadMagic.Core.Tests.Unit
     public class GameServiceTests
     {
         [Fact]
-        public void GetFutureGamesReturnsFutureGamesFromDataStore()
+        public async Task GetFutureGamesAsyncReturnsFutureGamesFromDataStore()
         {
             var gamesContext = new GameContext(Substitute.For<IConfigurer>());
             var dateProvider = Substitute.For<IDateProvider>();
@@ -49,7 +50,7 @@ namespace SpreadMagic.Core.Tests.Unit
             dateProvider.UtcNow.Returns(DateTime.MinValue);
 
             var service = GetService(gamesContext, dateProvider);
-            var result = service.GetFutureGames();
+            var result = await service.GetFutureGamesAsync();
 
             result.Should()
                   .BeEquivalentTo(new
@@ -67,6 +68,9 @@ namespace SpreadMagic.Core.Tests.Unit
                           DateAndTime = new DateTime(2020, 4, 11, 9, 0, 0)
                       });
         }
+
+        public void GetAllGameDetailsReturnsAllGamesFromDateBasedOnGameDateFromDataStore()
+        { }
 
         private GameService GetService(GameContext gamesContext, IDateProvider dateProvider)
         {

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpreadMagic.Core;
 using SpreadMagic.Web.Api.Models;
@@ -15,9 +16,9 @@ namespace SpreadMagic.Web.Api.Controllers
 
         [HttpGet]
         [Route("future")]
-        public IActionResult GetFutureGames()
+        public async Task<IActionResult> GetFutureGames()
         {
-            var games = _gameService.GetFutureGames();
+            var games = await _gameService.GetFutureGamesAsync();
 
             var gameModels = games.Select(game => new GameModel
             {

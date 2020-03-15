@@ -1,7 +1,9 @@
-﻿namespace SpreadMagic.Core
+﻿using System.Threading.Tasks;
+
+namespace SpreadMagic.Core
 {
     public interface IGameService
     {
-        Game[] GetFutureGames();
+        Task<Game[]> GetFutureGamesAsync();
     }
 }

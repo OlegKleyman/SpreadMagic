@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
@@ -13,7 +14,7 @@ namespace SpreadMagic.Web.Api.Tests.Unit
     public class GamesControllerTests
     {
         [Fact]
-        public void GetFutureGamesReturnsAllFutureGamesFromService()
+        public async Task GetFutureGamesReturnsAllFutureGamesFromService()
         {
             var gamesService = Substitute.For<IGameService>();
             var games = new[]
@@ -22,10 +23,10 @@ namespace SpreadMagic.Web.Api.Tests.Unit
                 new Game(2, 12, 13, new DateTime(2020, 4, 11, 9, 0, 0), 3.2m)
             };
 
-            gamesService.GetFutureGames().Returns(games);
+            gamesService.GetFutureGamesAsync().Returns(games);
             var controller = GetController(gamesService);
 
-            var result = controller.GetFutureGames();
+            var result = await controller.GetFutureGames();
 
             result.Should()
                   .BeOfType<OkObjectResult>()

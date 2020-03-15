@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SpreadMagic.Data.Contexts;
 
 namespace SpreadMagic.Core
@@ -15,12 +17,12 @@ namespace SpreadMagic.Core
             _dateProvider = dateProvider;
         }
 
-        public Game[] GetFutureGames()
+        public async Task<Game[]> GetFutureGamesAsync()
         {
-            var games = _gamesContext.Games.Where(game => game.DateAndTime > _dateProvider.UtcNow)
+            var games = await _gamesContext.Games.Where(game => game.DateAndTime > _dateProvider.UtcNow)
                                      .Select(game =>
                                          new Game(game.Id, game.HomeTeamId, game.AwayTeamId, game.DateAndTime, game.Spread))
-                                     .ToArray();
+                                     .ToArrayAsync();
             return games;
         }
     }
